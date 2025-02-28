@@ -1,0 +1,38 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+
+int fakt(a){
+   int i,sonuc=1;
+   for(i=1; i<=a; i++){
+    sonuc *=i;
+   }
+return sonuc;
+}
+
+
+
+int komb(a,b){
+    return fakt(a)/(fakt(b)*fakt(a-b));
+
+}
+
+
+int main() {
+    int n;
+    printf("binom acilimi icin n degerini girin: ");
+    scanf("%d", &n);
+
+    printf("\n(a + b) acilimi:\n\n");
+
+    for(int i = 0; i <= n; i++) {
+        printf("%d.a%d.b%d", komb(n, i), n-i, i);
+        if (i != n) {
+            printf(" + ");
+        }
+    }
+
+    return 0;
+}
+
